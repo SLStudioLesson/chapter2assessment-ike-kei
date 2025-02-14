@@ -59,8 +59,9 @@ public class RecipeFileHandler {
         // ファイルの書き込み処理
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             // recipe.txtの新しい行に、レシピと材料名を","で区切り書き込む
+            String recipeIngredients = recipeName + "," + ingredients;
+            write = recipeIngredients;
             writer.newLine();
-            write = recipeName + "," + ingredients;
             writer.write(write);
         } catch (IOException e) {
             e.getMessage();

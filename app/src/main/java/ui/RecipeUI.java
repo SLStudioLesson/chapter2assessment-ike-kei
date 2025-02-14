@@ -93,14 +93,12 @@ public class RecipeUI {
         // 入力の受付処理
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
-            System.out.print("新しいレシピを入力してください");
+            System.out.print("Enter recipe name:" );
             String recipe = reader.readLine();
-            System.out.print("主な材料名を入力してください");// 材料名はユーザーが","区切りで入力する
+            System.out.print("Enter main ingredients (comma separated):");// 材料名はユーザーが","区切りで入力する
             String ingredients = reader.readLine();
-            // 出力内容に沿って、入力された文字列を出力する
-            String result = "Enter recipe name: " + recipe + "\nEnter main ingredients (comma separated): "
-                    + ingredients + "\nRecipe added succesfully.";
-            System.out.println(result);
+            // 入力終了後、
+            System.out.println("Recipe added succesfully.");
             // fileHandlerクラスのaddRecipeのメソッドを呼び出し、引数でレシピ・材料名を受け渡す
             fileHandler.addRecipe(recipe, ingredients);
         } catch (IOException e) {
